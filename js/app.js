@@ -1,3 +1,5 @@
+var contentTitle=document.createElement('a');
+
 var addForm = function(){
   //Elimina el campo de "añadir lista"
   var form=document.getElementById('form');
@@ -27,7 +29,7 @@ var addForm = function(){
     document.getElementById("form2").appendChild(save);
     //Se guarda el input cuando se oprime el botón guardar
     save.addEventListener('click', function (){
-      var contentTitle=document.createElement('a');
+      //var contentTitle=document.createElement('a');
 
       var texto=document.getElementById('entrada2');
       contentTitle.innerText=texto.value;
@@ -68,10 +70,29 @@ var addForm = function(){
           console.log(content3.innerText);
           var caja=document.createElement("input");
           caja.setAttribute('type','button');
-          document.getElementById("list-task").appendChild(caja);
+          //document.getElementById("list-task").appendChild(caja);
 
-          console.log(caja);
+          //console.log(caja);
         //content3.appendChild(boxes);
+
+        //-----------------------------------------
+        var orderList = document.getElementById ("list-task"); //Trayendo los elementos de html, al id unico de order-list
+        var addButton= document.getElementById("send3");//Boton agregar
+        var liNew= document.createElement("li")
+        var textNew= document.getElementById("formulario");//Texto de la nueva lista
+        // IDEA: mandando a llamar al boton para que el user suba lo q ingresa y al input para que el user suba su info
+        //Funcion que agrega eventos a la lista, el user mete fruta y boton para subir informacion
+        //addButton.addEventListener("click", addList);
+
+          var newList= document.createElement("li");//Creando nuevo elemento tipo lista
+          var textList= document.createTextNode(textNew.value);//Agregando el texto a una variable nueva que sera un nodo elemento del tipo texto
+
+          liNew.appendChild(textList);//Nodo texto agregado al nodo elemento <li>
+
+          orderList.appendChild(liNew);//Agregando a la etiqueta <li> a <ol> para q se muestre y agregue en lista etext-newtextNew.value=" ";//limpiando el input para que el usuario vuelva a escribir una nueva tarea
+          textNew.value="";
+        //------------------------------------------
+
 
       }
       var send3=document.getElementById('send3');
@@ -90,8 +111,6 @@ addList.addEventListener('click', addForm);
 
 
 //cuando el botón tenga click ejecute la función
-
-
 
 
 
